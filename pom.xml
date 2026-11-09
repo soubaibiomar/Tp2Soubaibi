@@ -16,17 +16,28 @@
     </properties>
 
     <dependencies>
+
+        <!-- LangChain4j -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j</artifactId>
             <version>1.23.0</version>
         </dependency>
 
+        <!-- Gemini -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-google-genai</artifactId>
             <version>1.23.0-beta33</version>
         </dependency>
+
+        <!-- Test 4 : Embeddings BGE en local -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-embeddings-bge-small-en-v15</artifactId>
+            <version>1.23.0-beta33</version>
+        </dependency>
+
     </dependencies>
 
 </project>
