@@ -31,10 +31,17 @@
             <version>1.23.0-beta33</version>
         </dependency>
 
-        <!-- Test 4 : Embeddings BGE en local -->
+        <!-- Test 4 : Embeddings BGE -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-embeddings-bge-small-en-v15</artifactId>
+            <version>1.23.0-beta33</version>
+        </dependency>
+
+        <!-- Test 5 : Easy RAG -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-easy-rag</artifactId>
             <version>1.23.0-beta33</version>
         </dependency>
 
