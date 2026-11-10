@@ -19,9 +19,15 @@ public class Test2Couts {
                 .temperature(0.7)
                 .build();
 
-        UserMessage message =
-                UserMessage.from("Traduis 'bonjour' en anglais");
+        // Question météo demandée pour le Test 7
+        String question =
+                "Je dois partir dans 2 jours à Paris ; "
+                        + "j'y resterai 3 jours. "
+                        + "Est-ce que je dois mettre un parapluie dans mes valises ?";
 
+        UserMessage message = UserMessage.from(question);
+
+        // Interroger Gemini sans aucun outil météo
         ChatResponse reponse = modele.chat(message);
 
         // Récupérer le texte de la réponse
@@ -34,20 +40,29 @@ public class Test2Couts {
         int inputTokens = usage.inputTokenCount();
         int outputTokens = usage.outputTokenCount();
 
+        System.out.println("=== TEST 7 : SANS OUTIL ===");
+        System.out.println("Question : " + question);
         System.out.println("Réponse : " + texteReponse);
+
+        System.out.println();
         System.out.println("Tokens entrée : " + inputTokens);
         System.out.println("Tokens sortie : " + outputTokens);
         System.out.println("Total tokens : " + totalTokens);
 
+        // Estimation des coûts selon les tarifs utilisés au Test 2
         double coutEntree = inputTokens * 0.30 / 1_000_000;
         double coutSortie = outputTokens * 2.50 / 1_000_000;
         double coutTotal = coutEntree + coutSortie;
 
-        double nombreRequetes = 1.0 / coutTotal;
+        System.out.printf("Coût total estimé : %.9f $%n", coutTotal);
 
-        System.out.printf("Coût total : %.9f $%n", coutTotal);
-        System.out.printf("Requêtes pour 1 dollar : %.0f%n",
-                Math.ceil(nombreRequetes));
+        if (coutTotal > 0) {
+            double nombreRequetes = 1.0 / coutTotal;
 
+            System.out.printf(
+                    "Requêtes pour 1 dollar : %.0f%n",
+                    Math.ceil(nombreRequetes)
+            );
+        }
     }
 }
