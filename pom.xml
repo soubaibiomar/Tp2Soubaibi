@@ -45,6 +45,13 @@
             <version>1.23.0-beta33</version>
         </dependency>
 
+        <!-- Test 6 : Parser PDF Apache Tika -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-document-parser-apache-tika</artifactId>
+            <version>1.23.0-beta33</version>
+        </dependency>
+
     </dependencies>
 
 </project>
